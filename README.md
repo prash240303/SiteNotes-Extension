@@ -20,6 +20,28 @@
 
 ## How to Use
 
+<div align="center">
+  <img
+    src="https://github.com/user-attachments/assets/d05da035-314a-4fca-b24c-ee5649c5e815"
+    alt="SiteNotes — full page view"
+    width="780"
+    style="border-radius: 12px; border: 1px solid #2a2a3e; box-shadow: 0 8px 32px rgba(0,0,0,0.4);"
+  />
+</div>
+
+<br>
+
+<div align="center">
+  <img
+    src="https://github.com/user-attachments/assets/4a1ba2cb-57d1-4fed-b26b-bd959de0a72b"
+    alt="SiteNotes — popup UI"
+    width="420"
+    style="border-radius: 12px; border: 1px solid #2a2a3e; box-shadow: 0 8px 32px rgba(0,0,0,0.4);"
+  />
+</div>
+
+<br>
+
 ### Adding a Note
 1. Visit any website (e.g. `overleaf.com`)
 2. Click the SiteNotes icon in the toolbar
