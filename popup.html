@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiteNotes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <span class="logo-dot"></span>
+        <span class="logo-text">SiteNotes</span>
+      </div>
+      <span class="current-domain" id="currentDomain">—</span>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="viewAllBtn" title="All notes">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1" y="3" width="13" height="1.5" rx="0.75" fill="currentColor"/><rect x="1" y="7" width="9" height="1.5" rx="0.75" fill="currentColor"/><rect x="1" y="11" width="11" height="1.5" rx="0.75" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Main: Note Editor ───────────────────────────────────────── -->
+  <main id="editorView">
+
+    <!-- Status bar -->
+    <div class="status-bar" id="statusBar">
+      <span class="status-dot" id="statusDot"></span>
+      <span class="status-text" id="statusText">No note for this site</span>
+    </div>
+
+    <!-- Note textarea -->
+    <div class="editor-area">
+      <textarea
+        id="noteTextarea"
+        placeholder="Add a note for this site…&#10;&#10;e.g. Update the Drive link and portfolio link, share new resume PDF to phone."
+        spellcheck="true"
+      ></textarea>
+    </div>
+
+    <!-- Tags -->
+    <div class="tags-section">
+      <label class="tags-label">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 1h4l5 5-4 4-5-5V1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><circle cx="3.5" cy="3.5" r="0.75" fill="currentColor"/></svg>
+        Tags
+      </label>
+      <input type="text" id="tagsInput" class="tags-input" placeholder="work, research, follow-up">
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button class="btn btn-danger" id="deleteBtn" style="display:none">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 3h8M5 3V2h2v1M4 3v6h4V3H4z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Delete
+      </button>
+      <div class="actions-right">
+        <button class="btn btn-ghost" id="quickEditBtn" title="Open inline editor on page">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M8.5 1.5l2 2-6 6H2.5v-2l6-6z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          On-page
+        </button>
+        <button class="btn btn-primary" id="saveBtn">Save</button>
+      </div>
+    </div>
+
+    <!-- Saved indicator -->
+    <div class="saved-toast" id="savedToast">✓ Saved</div>
+  </main>
+
+  <!-- ── All Notes View ──────────────────────────────────────────── -->
+  <div id="allNotesView" style="display:none">
+    <div class="all-notes-header">
+      <button class="back-btn" id="backBtn">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </button>
+      <span class="all-notes-title">All Notes</span>
+      <span class="notes-count" id="notesCount">0</span>
+    </div>
+
+    <div class="search-wrap">
+      <svg class="search-icon" width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="5.5" cy="5.5" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M9 9l2.5 2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search notes…">
+    </div>
+
+    <div class="notes-list" id="notesList">
+      <!-- populated dynamically -->
+    </div>
+
+    <div class="empty-state" id="emptyState" style="display:none">
+      <div class="empty-icon">📭</div>
+      <div class="empty-text">No notes yet.<br>Visit a site and add one!</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
